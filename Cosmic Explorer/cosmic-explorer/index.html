@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="COSMIC EXPLORER - Uzayın derinliklerini keşfedin. Güneş sistemi, gezegenler, galaksiler ve daha fazlası.">
+  <title>COSMIC EXPLORER | Uzay Keşif Merkezi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="hologram-ring"></div>
+      <div class="hologram-ring ring2"></div>
+      <div class="hologram-ring ring3"></div>
+      <h1 class="loading-title">COSMIC EXPLORER</h1>
+      <p class="loading-sub">Evrenin sırlarını keşfetmeye hazırlanıyorsunuz...</p>
+      <div class="loading-bar"><div class="loading-fill"></div></div>
+      <p class="loading-percent">0%</p>
+    </div>
+  </div>
+
+  <!-- Star Background -->
+  <canvas id="star-canvas"></canvas>
+  <!-- Nebula layers -->
+  <div class="nebula-layer nebula-1"></div>
+  <div class="nebula-layer nebula-2"></div>
+
+  <!-- Main App -->
+  <div id="app" class="app hidden">
+    <!-- Header -->
+    <header id="main-header" class="glass-header">
+      <div class="header-left">
+        <div class="logo-mark">✦</div>
+        <h1 class="app-title">COSMIC <span>EXPLORER</span></h1>
+      </div>
+      <div class="header-right">
+        <div class="live-badge"><span class="pulse-dot"></span>LIVE</div>
+        <button id="sound-toggle" class="icon-btn" aria-label="Ses">🔊</button>
+      </div>
+    </header>
+
+    <!-- Pages Container -->
+    <main id="pages-container">
+
+      <!-- HOME PAGE -->
+      <section id="page-home" class="page active">
+        <div class="page-scroll">
+          <!-- Hero -->
+          <div class="hero-section">
+            <h2 class="hero-title">Evreni<br><span class="gradient-text">Keşfedin</span></h2>
+            <p class="hero-sub">Güneş Sistemi'nden galaksilerin derinliklerine uzanan kozmik bir yolculuğa çıkın</p>
+            <button id="btn-start-explore" class="cta-btn">
+              <span>Keşfe Başla</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <!-- APOD Section -->
+          <div class="section-block">
+            <div class="section-header">
+              <h3>📸 Günün Astronomi Fotoğrafı</h3>
+              <span class="section-badge">APOD</span>
+            </div>
+            <div id="apod-card" class="apod-card glass-card">
+              <div class="apod-image" id="apod-image"></div>
+              <div class="apod-info">
+                <h4 id="apod-title"></h4>
+                <p id="apod-desc"></p>
+                <span id="apod-credit" class="apod-credit"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Planets -->
+          <div class="section-block">
+            <div class="section-header">
+              <h3>🪐 Güneş Sistemi</h3>
+              <button class="see-all-btn" data-page="solarsystem">Tümünü Gör →</button>
+            </div>
+            <div id="planet-carousel" class="planet-carousel"></div>
+          </div>
+
+          <!-- Meteor Calendar -->
+          <div class="section-block">
+            <div class="section-header">
+              <h3>☄️ Meteor Yağmurları</h3>
+              <span class="section-badge">2026</span>
+            </div>
+            <div id="meteor-list" class="meteor-list"></div>
+          </div>
+
+          <!-- News Slider -->
+          <div class="section-block">
+            <div class="section-header">
+              <h3>📰 Uzay Haberleri</h3>
+              <span class="section-badge">GÜNCEL</span>
+            </div>
+            <div id="news-slider" class="news-slider"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLAR SYSTEM PAGE -->
+      <section id="page-solarsystem" class="page">
+        <div class="page-scroll">
+          <div class="page-title-bar">
+            <h2>Güneş Sistemi</h2>
+            <p>Gezegenler arasında yolculuk yapın</p>
+          </div>
+          <canvas id="solar-canvas"></canvas>
+          <div id="planet-info-overlay" class="planet-info-overlay hidden">
+            <button id="close-planet-detail" class="close-btn">✕</button>
+            <div id="planet-detail-content"></div>
+          </div>
+          <div id="planet-list-grid" class="planet-list-grid"></div>
+        </div>
+      </section>
+
+      <!-- EXPLORE PAGE -->
+      <section id="page-explore" class="page">
+        <div class="page-scroll">
+          <div class="page-title-bar">
+            <h2>Keşfet</h2>
+            <p>Evrenin harikalarını inceleyin</p>
+          </div>
+          <div id="explore-grid" class="explore-grid"></div>
+          <div id="explore-detail" class="explore-detail hidden"></div>
+        </div>
+      </section>
+
+      <!-- NEWS PAGE -->
+      <section id="page-news" class="page">
+        <div class="page-scroll">
+          <div class="page-title-bar">
+            <h2>Uzay Haberleri</h2>
+            <p>Kozmik gelişmeleri takip edin</p>
+          </div>
+          <div id="news-full-list" class="news-full-list"></div>
+        </div>
+      </section>
+
+      <!-- PROFILE PAGE -->
+      <section id="page-profile" class="page">
+        <div class="page-scroll">
+          <div class="page-title-bar">
+            <h2>Profil</h2>
+            <p>Uzay kaşifi kimliğiniz</p>
+          </div>
+          <div class="profile-content">
+            <div class="profile-avatar">
+              <div class="avatar-ring"></div>
+              <div class="avatar-icon">👨‍🚀</div>
+            </div>
+            <h3 class="profile-name">Uzay Kaşifi</h3>
+            <p class="profile-rank">Seviye 7 • Yıldız Kâşifi</p>
+            <div class="stats-grid">
+              <div class="stat-card glass-card"><div class="stat-num">8</div><div class="stat-label">Gezegen Ziyareti</div></div>
+              <div class="stat-card glass-card"><div class="stat-num">42</div><div class="stat-label">Keşif Puanı</div></div>
+              <div class="stat-card glass-card"><div class="stat-num">5</div><div class="stat-label">Rozet</div></div>
+              <div class="stat-card glass-card"><div class="stat-num">12</div><div class="stat-label">Gözlem</div></div>
+            </div>
+            <div class="badges-section">
+              <h4>Rozetler</h4>
+              <div class="badges-row">
+                <div class="badge-item">🚀<span>İlk Uçuş</span></div>
+                <div class="badge-item">🪐<span>Gezegen Avcısı</span></div>
+                <div class="badge-item">⭐<span>Yıldız Gözlemci</span></div>
+                <div class="badge-item">🌌<span>Galaksi Kaşifi</span></div>
+                <div class="badge-item">☄️<span>Meteor Avcısı</span></div>
+              </div>
+            </div>
+            <div class="settings-list">
+              <div class="setting-item glass-card"><span>🔔 Bildirimler</span><div class="toggle on"></div></div>
+              <div class="setting-item glass-card"><span>🔊 Uzay Sesleri</span><div class="toggle on"></div></div>
+              <div class="setting-item glass-card"><span>🌙 Karanlık Mod</span><div class="toggle on"></div></div>
+              <div class="setting-item glass-card"><span>📍 Konum Servisleri</span><div class="toggle"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- AI Chat Button -->
+    <button id="ai-chat-btn" class="ai-chat-btn">
+      <span class="ai-icon">🤖</span>
+      <span class="ai-pulse"></span>
+    </button>
+
+    <!-- AI Chat Panel -->
+    <div id="ai-chat-panel" class="ai-chat-panel hidden">
+      <div class="chat-header glass-card">
+        <div class="chat-header-left">
+          <span>🤖</span>
+          <div><strong>Kozmik Asistan</strong><small>AI • Çevrimiçi</small></div>
+        </div>
+        <button id="close-chat" class="close-btn">✕</button>
+      </div>
+      <div id="chat-messages" class="chat-messages"></div>
+      <div class="chat-input-bar glass-card">
+        <input id="chat-input" type="text" placeholder="Uzay hakkında bir şey sorun..." autocomplete="off">
+        <button id="chat-send" class="send-btn">➤</button>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav id="bottom-nav" class="bottom-nav glass-card">
+      <button class="nav-item active" data-page="home">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span>Ana Sayfa</span>
+      </button>
+      <button class="nav-item" data-page="solarsystem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)"/></svg>
+        <span>Güneş Sistemi</span>
+      </button>
+      <button class="nav-item" data-page="explore">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <span>Keşfet</span>
+      </button>
+      <button class="nav-item" data-page="news">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>
+        <span>Haberler</span>
+      </button>
+      <button class="nav-item" data-page="profile">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        <span>Profil</span>
+      </button>
+    </nav>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

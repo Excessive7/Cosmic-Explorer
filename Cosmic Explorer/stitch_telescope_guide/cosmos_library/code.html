@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#0c0e12",
+              "inverse-surface": "#f8f9fe",
+              "primary-dim": "#7e51ff",
+              "surface-dim": "#0c0e12",
+              "surface-container-low": "#111417",
+              "on-background": "#f8f9fe",
+              "on-primary": "#340090",
+              "tertiary": "#ffe792",
+              "surface-container-lowest": "#000000",
+              "on-secondary-fixed": "#003a42",
+              "on-secondary-fixed-variant": "#005964",
+              "secondary-container": "#006875",
+              "on-tertiary-fixed-variant": "#665500",
+              "on-primary-fixed-variant": "#32008a",
+              "error": "#ff6e84",
+              "on-tertiary": "#655400",
+              "background": "#0c0e12",
+              "surface-container-high": "#1c2025",
+              "secondary": "#00e3fd",
+              "tertiary-fixed-dim": "#efc900",
+              "surface-variant": "#22262b",
+              "surface-bright": "#282c32",
+              "surface-container": "#171a1e",
+              "surface-container-highest": "#22262b",
+              "on-surface-variant": "#a9abb0",
+              "error-dim": "#d73357",
+              "inverse-primary": "#6834eb",
+              "inverse-on-surface": "#535559",
+              "outline": "#73757a",
+              "on-secondary-container": "#e8fbff",
+              "on-surface": "#f8f9fe",
+              "on-primary-container": "#280072",
+              "secondary-fixed-dim": "#00d7f0",
+              "tertiary-dim": "#efc900",
+              "surface-tint": "#b6a0ff",
+              "tertiary-container": "#ffd709",
+              "on-primary-fixed": "#000000",
+              "primary-fixed": "#a98fff",
+              "secondary-fixed": "#26e6ff",
+              "error-container": "#a70138",
+              "on-tertiary-container": "#5b4b00",
+              "secondary-dim": "#00d4ec",
+              "on-error": "#490013",
+              "outline-variant": "#46484c",
+              "tertiary-fixed": "#ffd709",
+              "on-tertiary-fixed": "#453900",
+              "primary": "#b6a0ff",
+              "primary-fixed-dim": "#9c7eff",
+              "on-error-container": "#ffb2b9",
+              "primary-container": "#a98fff",
+              "on-secondary": "#004d57"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-panel {
+            background: rgba(34, 38, 43, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(70, 72, 76, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-[#0c0e12]/60 backdrop-blur-xl dark:bg-[#0c0e12]/60 border-b border-white/10 shadow-[0_0_15px_rgba(182,160,255,0.1)]">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/5 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[#b6a0ff]">search</span>
+</button>
+<h1 class="text-2xl font-bold bg-gradient-to-r from-[#b6a0ff] to-[#7e51ff] bg-clip-text text-transparent font-['Space_Grotesk'] tracking-tighter">Cosmos Explorer</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-400 font-label text-sm tracking-widest hover:text-[#00e3fd] transition-colors" href="#">EXPLORER</a>
+<a class="text-[#00e3fd] font-label text-sm tracking-widest transition-colors" href="#">LIBRARY</a>
+<a class="text-slate-400 font-label text-sm tracking-widest hover:text-[#00e3fd] transition-colors" href="#">OPTICS</a>
+</nav>
+<div class="w-10 h-10 rounded-full border border-primary/30 p-0.5 overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover rounded-full" data-alt="close-up portrait of a professional astronomer in dark clothing with soft moody lighting and cosmic background reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfEiIGH0d_qd3A8fXKdRsJ3UXudZteitqEOcVcgLgtMj5u_Opywi0npK9fEYs6AyNHb6dSXR93QO7UM_L9Y1sHioto39ZfVSCSYEcqJPS8MS3xgJmI1x8hKlvgudvTCJGsyUHAC8nsMmFSSEzGD-IDTJE_VguCPLKmYP1s9Dg49W0cLz3xFa89n1rwXU5rE9T1GYnnzt53tfrNMJk7jPlPelGO_v17ttnR1zO97V8GQQj3ZRfePOEV0u92kOb7haY7vrgMwV4-V7h1"/>
+</div>
+</div>
+</header>
+<main class="pt-28 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-16 relative group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/5 blur-3xl rounded-full -z-10 opacity-50 group-hover:opacity-80 transition-opacity"></div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-secondary font-label tracking-[0.3em] text-xs font-bold mb-4 block">KNOWLEDGE ARCHIVE</span>
+<h2 class="text-5xl md:text-7xl font-headline font-bold tracking-tighter text-on-surface">Celestial <span class="text-outline">Library.</span></h2>
+</div>
+<p class="max-w-md text-on-surface-variant text-lg leading-relaxed">
+                    Access the definitive collection of cosmic literature, from fundamental physics to practical observational guides.
+                </p>
+</div>
+</section>
+<!-- Category: Beginners -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<div class="w-2 h-8 bg-primary rounded-full"></div>
+<h3 class="text-2xl font-headline font-bold tracking-tight">Beginners</h3>
+</div>
+<button class="text-secondary font-label text-xs tracking-widest flex items-center gap-2 group">
+                    VIEW ALL <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-6 overflow-x-auto no-scrollbar pb-4 -mx-2 px-2">
+<!-- Book Card 1 -->
+<div class="flex-shrink-0 w-64 glass-panel rounded-xl p-4 group cursor-pointer hover:shadow-[0_0_30px_rgba(182,160,255,0.15)] transition-all duration-300">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="cinematic cover of an astronomy book showing a vibrant blue nebula with sharp white stars and minimal typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeKvCswDw8d-YYOpvuTTyB2glQbHxtT_Qp8snAQ6opjpM6_JH8bpPTwkFYMfP7G8CBnDdXlKmtGBFqLRs69uwVb6POJ9lufnBbZEPTandUpQJQ9iy6XT1MZ7bPzRI_7uX3Ha1uGZttAm6RwIbX5oFvV3QUSPKqlLKGlp-5_eWBTg_TdZo2HCx_v41zwLK9RB9ZQaCZjZZZxAqvRTy36fUGTI2HmIu7tdrpxkfenBrcmYWQX8DA5EEZQle21tTEbRatXjlBZ5Zy_uMf"/>
+<div class="absolute top-2 right-2 px-2 py-1 bg-surface-container/80 backdrop-blur text-[10px] font-bold rounded-md border border-white/10">FREE TRIAL</div>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 truncate">Guide to the Night Sky</h4>
+<p class="text-on-surface-variant text-sm mb-4">Dr. Sarah Jenkins</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$24.99</span>
+<button class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="flex-shrink-0 w-64 glass-panel rounded-xl p-4 group cursor-pointer hover:shadow-[0_0_30px_rgba(182,160,255,0.15)] transition-all duration-300">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="artistic book cover featuring the silhouette of a telescope against a massive bright orange moon and starry sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAxdto4XdDal7D2Go2DFoPZ60fRndaKL_8ZGKeGJsGzwmIGYNtNn-L_N8jtLDAkI5s6H7MIN8gc0Ssq5kaqqOSM7VrUWHa-EAe-ODb3PhYcecbH_9GqMQ4xnYTIcQip3KF_TqVQL4ZS0-1whfhkhfG2XFHF5ikJhra3XZzBkP6ja9JL5nWRbhNhlRV1_Tc8XWQOm-KfNKczNtbmcITO4piLA0yRwAObcPPIwtGHBFeQWI-Ln_csUFKebbXIAcHYQTL0RJObJMR7piP"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 truncate">Backyard Universe</h4>
+<p class="text-on-surface-variant text-sm mb-4">Marcus Vane</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$19.00</span>
+<button class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="flex-shrink-0 w-64 glass-panel rounded-xl p-4 group cursor-pointer hover:shadow-[0_0_30px_rgba(182,160,255,0.15)] transition-all duration-300">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern book cover design showing digital earth from space with networking lines and glowing blue lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0qE1x17HL1V8EjnzJxU4e_5InWUHi369Ht0NYJW7WUu8dVYUmWzvNwLA7v2FvDg33-vPGF696C-vDc-wyVDmpaB-cYj8VXkaD-DTbU1qjptfQRjQl9hT9m-q0-I1zrm8F9NzWf5lxeY13hubfnmpTQdE4cx9cmpHDSuKWUU73j5BU1x_IAwTv68AZaDvFH24oKUCLV3yxJNOdjzu_zdOY7AyGNKI50EPXhQGxjeDdbqOn4W4FkLN6NHcDnyqkbdllWRiHie_V6Dn6"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 truncate">Earth &amp; Beyond</h4>
+<p class="text-on-surface-variant text-sm mb-4">Astrid Thorne</p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$32.50</span>
+<button class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Astrophysics -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<div class="w-2 h-8 bg-secondary rounded-full"></div>
+<h3 class="text-2xl font-headline font-bold tracking-tight">Astrophysics</h3>
+</div>
+<button class="text-secondary font-label text-xs tracking-widest flex items-center gap-2 group">
+                    VIEW ALL <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-6 overflow-x-auto no-scrollbar pb-4 -mx-2 px-2">
+<!-- Book Card 4 -->
+<div class="flex-shrink-0 w-64 glass-panel rounded-xl p-4 group cursor-pointer hover:shadow-[0_0_30px_rgba(0,227,253,0.15)] transition-all duration-300">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="abstract scientific book cover depicting a black hole's event horizon with golden light swirls and gravitational lensing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmHFz0LmU9quJMSt5VKT1IZXjrUVeGkqgFJW1nWyiMZZe-4ZqovVCY9ieJvbHMh8N-LQEXji7gK2cMrRdKfPHw3eGzrqnEUUOhxhj0KoB7pfFCqOpMZG4oNvE6rT0hEfLfDgrwgmaYm7M9_L5gPmND6Amq36rPHC22VNoFCr2DG9FutefCgJz3D2pH-bGuw7PYWhxx4IsGFpaN6PmdES5cqP6kjCVZZqQ8ErsAJ4E3VHtL1wNJeSC4wnO7M09XQ2WXKyHViB31IMEI"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 truncate">Singularity Mechanics</h4>
+<p class="text-on-surface-variant text-sm mb-4">Dr. Neil Grayson</p>
+<div class="flex items-center justify-between">
+<span class="text-secondary font-bold">$89.99</span>
+<button class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Book Card 5 -->
+<div class="flex-shrink-0 w-64 glass-panel rounded-xl p-4 group cursor-pointer hover:shadow-[0_0_30px_rgba(0,227,253,0.15)] transition-all duration-300">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="minimalist dark book cover with geometric white lines representing light waves and atomic structures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACThiKcDNh0nqgbmpW_PJaIHKT9RB_PIAk8aVa3j0nrgSuFft2rPnkBYL4tGFNbTj5Dz54hBuvuxdi4cZnKqu5eHrPyYBMwwCOuG2w4qg5H6TFtWw2O6oqnjfD1YwUfjVUQ6o7mlXlc-ROiDDw4WyZvozeuUwfYhim6P6mTtp0E2ZLlx3s6E6-4NCmAnOb0zIznUOjhA8EnGFEDaktby8DuBpFA_g4AzO0TsA1_MWG3stcYCPoM5t_qAMCYy4QO_cIeT5tFGkI5bZN"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 truncate">Quantum Cosmology</h4>
+<p class="text-on-surface-variant text-sm mb-4">L. Sterling</p>
+<div class="flex items-center justify-between">
+<span class="text-secondary font-bold">$75.00</span>
+<button class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Observational -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<div class="w-2 h-8 bg-tertiary rounded-full"></div>
+<h3 class="text-2xl font-headline font-bold tracking-tight">Observational</h3>
+</div>
+<button class="text-secondary font-label text-xs tracking-widest flex items-center gap-2 group">
+                    VIEW ALL <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-6 overflow-x-auto no-scrollbar pb-4 -mx-2 px-2">
+<!-- Book Card 6 -->
+<div class="flex-shrink-0 w-64 glass-panel rounded-xl p-4 group cursor-pointer hover:shadow-[0_0_30px_rgba(255,231,146,0.15)] transition-all duration-300">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="high contrast book cover with a silhouette of an observatory dome under a Milky Way star cluster" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtEvtXJkt8LGyhnt0xXKkDwKRitLKrx-lZdaQFFBawCkz814hcEV7Uf0ApFQju5lc4gV9m5FFCn8FJSlXr-cBJnypaSKO9RPsiL4PShmvdvSCksDxfyK2HPuUBb_rpv7iCUS6fDlIw37tR97ToM3QBgabvcEUDAiT_7H33xHoflGNfz6msP6noAGVGXlk4NjUl_j37GFB3i2aBPS2Cn84bV7szl8p_jFf5V4osOTZ_dQ9zi52RBmqY8LFqhrOiqnyXJb8IG3lvuv2a"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 truncate">Deep Sky Atlas</h4>
+<p class="text-on-surface-variant text-sm mb-4">P. Messier</p>
+<div class="flex items-center justify-between">
+<span class="text-tertiary font-bold">$54.00</span>
+<button class="w-8 h-8 rounded-full bg-tertiary/20 flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Kids -->
+<section class="mb-16">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-4">
+<div class="w-2 h-8 bg-error-dim rounded-full"></div>
+<h3 class="text-2xl font-headline font-bold tracking-tight">Kids</h3>
+</div>
+<button class="text-secondary font-label text-xs tracking-widest flex items-center gap-2 group">
+                    VIEW ALL <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="flex gap-6 overflow-x-auto no-scrollbar pb-4 -mx-2 px-2">
+<!-- Book Card 7 -->
+<div class="flex-shrink-0 w-64 glass-panel rounded-xl p-4 group cursor-pointer hover:shadow-[0_0_30px_rgba(255,110,132,0.15)] transition-all duration-300">
+<div class="relative aspect-[3/4] mb-4 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="colorful children's book cover featuring a cute astronaut cat sitting on a purple moon with smiling planets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzDhGFyh3uJZufZ4x9TylxwOIIWVMt-tnLKAQlj3U7qxX9k5wvcQZaCHCylF-Q0BEssqv6vK2mjWEGCpUOpNZR16FFyi4TvsfyqnFTosALvY-qVWD-uA0rkEVPQ-kJPXBx-Eh8L9a8OobJgPUz7Af9IOCfoDkVVwdNbnOZQ3VGoJRWELIse7n0t-zOMzw6AEFI4jP4w_fqUPiooACCU00QCvIkBC2IkZic-OIRYxAYbe-CV3cb4riFRBxaZanvUCWLwR1StUKnGaxW"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 truncate">Milo's Moon Walk</h4>
+<p class="text-on-surface-variant text-sm mb-4">Jenny Cloud</p>
+<div class="flex items-center justify-between">
+<span class="text-error font-bold">$12.99</span>
+<button class="w-8 h-8 rounded-full bg-error/20 flex items-center justify-center text-error group-hover:bg-error group-hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#171a1e]/80 backdrop-blur-2xl dark:bg-[#171a1e]/80 border-t border-white/5 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] md:hidden rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-70 hover:text-[#00e3fd] transition-all" href="#">
+<span class="material-symbols-outlined">brightness_7</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Explorer</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#b6a0ff] bg-[#b6a0ff]/10 rounded-xl px-4 py-1 shadow-[0_0_10px_rgba(182,160,255,0.2)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">library_books</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-70 hover:text-[#00e3fd] transition-all" href="#">
+<span class="material-symbols-outlined">satellite</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Optics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-70 hover:text-[#00e3fd] transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest mt-1">Settings</span>
+</a>
+</nav>
+</body></html>
