@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/29365862/README.md)
 # 🌌 Cosmic Explorer
 
 Öğrenci Adı Soyadı: [Kaan ARTUN]
@@ -84,16 +83,16 @@ Proje tamamen istemci tarafında çalıştığından karmaşık bir sunucu kurul
 ## 📸 Ekran Görüntüleri
 
 ### Ana Ekran ve Günün Astronomi Fotoğrafı
-![Ana Sayfa](assets/screenshots/home.png)
+![Ana Sayfa](cosmic-explorer/assets/screenshots/home.png)
 
 ### İnteraktif Güneş Sistemi Simülasyonu
-![Güneş Sistemi](assets/screenshots/solar.png)
+![Güneş Sistemi](cosmic-explorer/assets/screenshots/solar.png)
 
 ### Evreni Keşfet Bölümü
-![Keşfet Sayfası](assets/screenshots/explore.png)
+![Keşfet Sayfası](cosmic-explorer/assets/screenshots/explore.png)
 
 ### Uzay Haberleri
-![Haberler Sayfası](assets/screenshots/news.png)
+![Haberler Sayfası](cosmic-explorer/assets/screenshots/news.png)
 
 ## 🔗 GitHub Proje Bağlantısı
 **GitHub Deposu:** [https://github.com/Excessive7/Cosmic-Explorer]
